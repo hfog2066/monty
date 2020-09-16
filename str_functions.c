@@ -4,7 +4,7 @@
  *_strcmp - compares two strings.
  *@s1: type str compare.
  *@s2: type str compare.
- *Return: 0
+ *Return: no return.
  */
 
 int _strcmp(char *s1, char *s2)
@@ -24,7 +24,7 @@ int _strcmp(char *s1, char *s2)
  *_sch - search char inside string
  *@s: string to review.
  *@c: char to find.
- *Return: 0
+ *Return: no return.
  */
 
 int _sch(char *s, char c)
