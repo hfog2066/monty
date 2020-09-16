@@ -1,5 +1,5 @@
-#ifndef _MONTY_
-#define _MONTY_
+#ifndef MONTY
+#define MONTY
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,7 +48,7 @@ typedef struct globals
 	char *buffer;
 } global_t;
 
-global_t varglo;
+global_t vglo;
 
 /**
  * struct instruction_s - opcode and its function.
@@ -64,7 +64,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern global_t varglo;
+extern global_t vglo;
 
 /* opcode_instructions*/
 
@@ -102,6 +102,6 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 
 /* main */
-void free_varglo(void);
+void free_vglo(void);
 
 #endif
