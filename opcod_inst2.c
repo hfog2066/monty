@@ -13,7 +13,7 @@ void _queue(stack_t **doubly, unsigned int nline)
 	(void)doubly;
 	(void)nline;
 
-	varglo.lifo = 0;
+	vglo.lifo = 0;
 }
 
 /**
@@ -29,7 +29,7 @@ void _stack(stack_t **doubly, unsigned int nline)
 	(void)doubly;
 	(void)nline;
 
-	varglo.lifo = 1;
+	vglo.lifo = 1;
 }
 
 /**
@@ -53,7 +53,7 @@ void _add(stack_t **doubly, unsigned int nline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't add, stack too short\n", nline);
-		free_varglo();
+		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
@@ -96,7 +96,7 @@ void _sub(stack_t **doubly, unsigned int nline)
 	if (m < 2)
 	{
 		dprintf(2, "L%u: can't sub, stack too short\n", nline);
-		free_varglo();
+		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
