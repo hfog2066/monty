@@ -50,6 +50,7 @@ typedef struct globals
 
 global_t vglo;
 
+
 /**
  * struct instruction_s - opcode and its function.
  * @opcode: the opcode.
