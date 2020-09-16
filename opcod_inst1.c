@@ -1,0 +1,140 @@
+#include "monty.h"
+
+/**
+ *_push - push element to stack.
+ *
+ *@doubly: head linked list.
+ *@nline: line number.
+ *Return: 0.
+ */
+
+void _push(stack_t **doubly, unsigned int nline)
+{
+	int n, j;
+
+	if (!varglo.arg)
+	{
+		dprintf(2, "L%u: ", nline);
+		dprintf(2, "usage: push integer\n");
+		free_varglo();
+		exit(EXIT_FAILURE);
+	}
+
+	for (j = 0; varglo.arg[j] != '\0'; j++)
+	{
+		if (!isdigit(varglo.arg[j]) && varglo.arg[j] != '-')
+		{
+			dprintf(2, "L%u: ", nline);
+			dprintf(2, "usage: push integer\n");
+			free_varglo();
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	n = atoi(varglo.arg);
+
+	if (varglo.lifo == 1)
+		add_dnodeint(doubly, n);
+	else
+		add_dnodeint_end(doubly, n);
+}
+
+/**
+ *_pall - prints all values on stack.
+ *
+ *@doubly: linked list head.
+ *@nline: line numbers.
+ *Return: 0.
+ */
+
+void _pall(stack_t **doubly, unsigned int nline)
+{
+	stack_t *aux;
+	(void)nline;
+
+	aux = *doubly;
+
+	while (aux)
+	{
+		printf("%d\n", aux->n);
+		aux = aux->next;
+	}
+}
+
+/**
+ *_pint - print value at top of stack.
+ *
+ *@doubly: linked list head.
+ *@nline: line number.
+ *Return: 0.
+ */
+
+void _pint(stack_t **doubly, unsigned int nline)
+{
+	(void)nline;
+
+	if (*doubly == NULL)
+	{
+		dprintf(2, "L%u: ", nline);
+		dprintf(2, "can't pint, stack empty\n");
+		free_varglo();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*doubly)->n);
+}
+
+/**
+ *_pop - removes top element of the stack.
+ *
+ *@doubly: linked list head.
+ *@nline: line number.
+ *Return: 0.
+ */
+
+void _pop(stack_t **doubly, unsigned int nline)
+{
+	stack_t *aux;
+
+	if (doubly == NULL || *doubly == NULL)
+	{
+		dprintf(2, "L%u: can't pop an empty stack\n", nline);
+		free_varglo();
+		exit(EXIT_FAILURE);
+	}
+	aux = *doubly;
+	*doubly = (*doubly)->next;
+	free(aux);
+}
+
+/**
+ *_swap - swaps top two elements of the stack.
+ *
+ *@doubly: linked list head.
+ *@nline: line number.
+ */
+
+void _swap(stack_t **doubly, unsigned int nline)
+{
+	int m = 0;
+	stack_t *aux = NULL;
+
+	aux = *doubly;
+
+	for (; aux != NULL; aux = aux->next, m++)
+		;
+
+	if (m < 2)
+	{
+		dprintf(2, "L%u: can't swap, stack too short\n", nline);
+		free_varglo();
+		exit(EXIT_FAILURE);
+	}
+
+	aux = *doubly;
+	*doubly = (*doubly)->next;
+	aux->next = (*doubly)->next;
+	aux->prev = *doubly;
+	(*doubly)->next = aux;
+	(*doubly)->prev = NULL;
+}
