@@ -5,7 +5,7 @@
  *
  *@doubly: head linked list.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _push(stack_t **doubly, unsigned int nline)
@@ -44,7 +44,7 @@ void _push(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line numbers.
- *Return: 0.
+ *Return: no return.
  */
 
 void _pall(stack_t **doubly, unsigned int nline)
@@ -66,7 +66,7 @@ void _pall(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _pint(stack_t **doubly, unsigned int nline)
@@ -89,7 +89,7 @@ void _pint(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _pop(stack_t **doubly, unsigned int nline)
@@ -112,6 +112,7 @@ void _pop(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
+ *Return: no return.
  */
 
 void _swap(stack_t **doubly, unsigned int nline)
