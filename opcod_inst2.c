@@ -5,7 +5,7 @@
  *
  *@doubly: linked list head.
  *@nline: line number;
- *Return: 0.
+ *Return: no return.
  */
 
 void _queue(stack_t **doubly, unsigned int nline)
@@ -20,8 +20,8 @@ void _queue(stack_t **doubly, unsigned int nline)
  *_stack - sets format data to a stack (LIFO)
  *
  *@doubly: linked list head.
- *@nline: line number;
- *Return: 0.
+ *@nline: line number.
+ *Return: no return.
  */
 
 void _stack(stack_t **doubly, unsigned int nline)
@@ -37,7 +37,7 @@ void _stack(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _add(stack_t **doubly, unsigned int nline)
@@ -67,7 +67,7 @@ void _add(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _nop(stack_t **doubly, unsigned int nline)
@@ -80,7 +80,7 @@ void _nop(stack_t **doubly, unsigned int nline)
  *_sub - substract top element to second element stack.
  *@doubly: linked list head.
  *@nline: line number;
- *Return: 0.
+ *Return: no return.
  */
 
 void _sub(stack_t **doubly, unsigned int nline)
