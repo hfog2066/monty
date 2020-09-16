@@ -6,7 +6,7 @@
  *
  *@doubly: linked list head.
  *@nline: line number;
- *Return: 0.
+ *Return: no return.
  */
 
 void _rotl(stack_t **doubly, unsigned int nline)
@@ -39,7 +39,7 @@ void _rotl(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _rotr(stack_t **doubly, unsigned int nline)
