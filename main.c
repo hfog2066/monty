@@ -1,6 +1,6 @@
 #include "monty.h"
 
-global_t varglo;
+/*global_t varglo;*/
 
 /**
  *free_varglo - frees global variables.
