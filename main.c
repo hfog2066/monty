@@ -1,35 +1,35 @@
 #include "monty.h"
 
-/*global_t varglo;*/
+/*global_t vglo;*/
 
 /**
- *free_varglo - frees global variables.
+ *free_vglo - frees global variables.
  *
  *Return: 0
  */
 
-void free_varglo(void)
+void free_vglo(void)
 {
-	free_dlistint(varglo.head);
-	free(varglo.buffer);
-	fclose(varglo.fd);
+	free_dlistint(vglo.head);
+	free(vglo.buffer);
+	fclose(vglo.fd);
 }
 
 /**
- *start_varglo - initializes global variables.
+ *start_vglo - initializes global variables.
  *
  *@fd: file descriptor.
  *Return: 0
  */
 
-void start_varglo(FILE *fd)
+void start_vglo(FILE *fd)
 {
-	varglo.lifo = 1;
-	varglo.cont = 1;
-	varglo.arg = NULL;
-	varglo.head = NULL;
-	varglo.fd = fd;
-	varglo.buffer = NULL;
+	vglo.lifo = 1;
+	vglo.cont = 1;
+	vglo.arg = NULL;
+	vglo.head = NULL;
+	vglo.fd = fd;
+	vglo.buffer = NULL;
 }
 
 /**
@@ -79,29 +79,29 @@ int main(int argc, char *argv[])
 	char *lines[2] = {NULL, NULL};
 
 	fd = check_input(argc, argv);
-	start_varglo(fd);
-	nlines = getline(&varglo.buffer, &size, fd);
+	start_vglo(fd);
+	nlines = getline(&vglo.buffer, &size, fd);
 	while (nlines != -1)
 	{
-		lines[0] = _strtoky(varglo.buffer, " \t\n");
+		lines[0] = _strtoky(vglo.buffer, " \t\n");
 		if (lines[0] && lines[0][0] != '#')
 		{
 			f = get_opcodes(lines[0]);
 			if (!f)
 			{
-				dprintf(2, "L%u: ", varglo.cont);
+				dprintf(2, "L%u: ", vglo.cont);
 				dprintf(2, "unknow instruction %s\n", lines[0]);
-				free_varglo();
+				free_vglo();
 				exit(EXIT_FAILURE);
 			}
-			varglo.arg = _strtoky(NULL, " \t\n");
-			f(&varglo.head, varglo.cont);
+			vglo.arg = _strtoky(NULL, " \t\n");
+			f(&vglo.head, vglo.cont);
 		}
-		nlines = getline(&varglo.buffer, &size, fd);
-		varglo.cont++;
+		nlines = getline(&vglo.buffer, &size, fd);
+		vglo.cont++;
 	}
 
-	free_varglo();
+	free_vglo();
 
 	return (0);
 }
