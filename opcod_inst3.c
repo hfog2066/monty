@@ -5,7 +5,7 @@
  *
  *@doubly: linked list head.
  *@nline: line number;
- *Return: 0.
+ *Return: no return.
  */
 
 void _div(stack_t **doubly, unsigned int nline)
@@ -42,7 +42,7 @@ void _div(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _mul(stack_t **doubly, unsigned int nline)
@@ -72,7 +72,7 @@ void _mul(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _mod(stack_t **doubly, unsigned int nline)
@@ -109,7 +109,7 @@ void _mod(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _pchar(stack_t **doubly, unsigned int nline)
@@ -134,7 +134,7 @@ void _pchar(stack_t **doubly, unsigned int nline)
  *
  *@doubly: linked list head.
  *@nline: line number.
- *Return: 0.
+ *Return: no return.
  */
 
 void _pstr(stack_t **doubly, unsigned int nline)
