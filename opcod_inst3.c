@@ -4,11 +4,11 @@
  *_div - divide second element by top element of the stack.
  *
  *@doubly: linked list head.
- *@nline: line number;
+ *@cline: line number;
  *Return: no return.
  */
 
-void _div(stack_t **doubly, unsigned int nline)
+void _div(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -20,32 +20,32 @@ void _div(stack_t **doubly, unsigned int nline)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't div, stack too short\n", nline);
+		dprintf(2, "L%u: can't div, stack too short\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*doubly)->n == 0)
 	{
-		dprintf(2, "L%u: division by zero\n", nline);
+		dprintf(2, "L%u: division by zero\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n /= (*doubly)->n;
-	_pop(doubly, nline);
+	_pop(doubly, cline);
 }
 
 /**
  *_mul - multiplies top element by second element of the stack.
  *
  *@doubly: linked list head.
- *@nline: line number.
+ *@cline: line number.
  *Return: no return.
  */
 
-void _mul(stack_t **doubly, unsigned int nline)
+void _mul(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -57,25 +57,25 @@ void _mul(stack_t **doubly, unsigned int nline)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't mul, stack too short\n", nline);
+		dprintf(2, "L%u: can't mul, stack too short\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n *= (*doubly)->n;
-	_pop(doubly, nline);
+	_pop(doubly, cline);
 }
 
 /**
  *_mod - rest of division of the second element.
  *
  *@doubly: linked list head.
- *@nline: line number.
+ *@cline: line number.
  *Return: no return.
  */
 
-void _mod(stack_t **doubly, unsigned int nline)
+void _mod(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -87,43 +87,43 @@ void _mod(stack_t **doubly, unsigned int nline)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't mod, stack too short\n", nline);
+		dprintf(2, "L%u: can't mod, stack too short\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*doubly)->n == 0)
 	{
-		dprintf(2, "L%u: division by zero\n", nline);
+		dprintf(2, "L%u: division by zero\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n %= (*doubly)->n;
-	_pop(doubly, nline);
+	_pop(doubly, cline);
 }
 
 /**
  *_pchar - print char value first element.
  *
  *@doubly: linked list head.
- *@nline: line number.
+ *@cline: line number.
  *Return: no return.
  */
 
-void _pchar(stack_t **doubly, unsigned int nline)
+void _pchar(stack_t **doubly, unsigned int cline)
 {
 
 	if (doubly == NULL || *doubly == NULL)
 	{
-		dprintf(2, "L%u: cant't pchar, stack empty\n", nline);
+		dprintf(2, "L%u: cant't pchar, stack empty\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 	if ((*doubly)->n < 0 || (*doubly)->n >= 128)
 	{
-		dprintf(2, "L%u: can't pchar, value out of range\n", nline);
+		dprintf(2, "L%u: can't pchar, value out of range\n", cline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
@@ -134,14 +134,14 @@ void _pchar(stack_t **doubly, unsigned int nline)
  *_pstr - print string of the stack.
  *
  *@doubly: linked list head.
- *@nline: line number.
+ *@cline: line number.
  *Return: no return.
  */
 
-void _pstr(stack_t **doubly, unsigned int nline)
+void _pstr(stack_t **doubly, unsigned int cline)
 {
 	stack_t *aux;
-	(void)nline;
+	(void)cline;
 
 	aux = *doubly;
 
