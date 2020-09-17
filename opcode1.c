@@ -4,16 +4,16 @@
  * _push - pushes an element to the stack
  *
  * @doubly: head of the linked list
- * @cline: line number
+ * @nline: line number
  * Return: no return
  */
-void _push(stack_t **doubly, unsigned int cline)
+void _push(stack_t **doubly, unsigned int nline)
 {
 	int n, j;
 
 	if (!vglo.arg)
 	{
-		dprintf(2, "L%u: ", cline);
+		dprintf(2, "L%u: ", nline);
 		dprintf(2, "usage: push integer\n");
 		free_vglo();
 		exit(EXIT_FAILURE);
@@ -23,7 +23,7 @@ void _push(stack_t **doubly, unsigned int cline)
 	{
 		if (!isdigit(vglo.arg[j]) && vglo.arg[j] != '-')
 		{
-			dprintf(2, "L%u: ", cline);
+			dprintf(2, "L%u: ", nline);
 			dprintf(2, "usage: push integer\n");
 			free_vglo();
 			exit(EXIT_FAILURE);
@@ -42,13 +42,13 @@ void _push(stack_t **doubly, unsigned int cline)
  * _pall - prints all values on the stack
  *
  * @doubly: head of the linked list
- * @cline: line numbers
+ * @nline: line numbers
  * Return: no return
  */
-void _pall(stack_t **doubly, unsigned int cline)
+void _pall(stack_t **doubly, unsigned int nline)
 {
 	stack_t *aux;
-	(void)cline;
+	(void)nline;
 
 	aux = *doubly;
 
@@ -63,16 +63,16 @@ void _pall(stack_t **doubly, unsigned int cline)
  * _pint - prints the value at the top of the stack
  *
  * @doubly: head of the linked list
- * @cline: line number
+ * @nline: line number
  * Return: no return
  */
-void _pint(stack_t **doubly, unsigned int cline)
+void _pint(stack_t **doubly, unsigned int nline)
 {
-	(void)cline;
+	(void)nline;
 
 	if (*doubly == NULL)
 	{
-		dprintf(2, "L%u: ", cline);
+		dprintf(2, "L%u: ", nline);
 		dprintf(2, "can't pint, stack empty\n");
 		free_vglo();
 		exit(EXIT_FAILURE);
@@ -85,16 +85,16 @@ void _pint(stack_t **doubly, unsigned int cline)
  * _pop - removes the top element of the stack
  *
  * @doubly: head of the linked list
- * @cline: line number
+ * @nline: line number
  * Return: no return
  */
-void _pop(stack_t **doubly, unsigned int cline)
+void _pop(stack_t **doubly, unsigned int nline)
 {
 	stack_t *aux;
 
 	if (doubly == NULL || *doubly == NULL)
 	{
-		dprintf(2, "L%u: can't pop an empty stack\n", cline);
+		dprintf(2, "L%u: can't pop an empty stack\n", nline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
@@ -107,10 +107,10 @@ void _pop(stack_t **doubly, unsigned int cline)
  * _swap - swaps the top two elements of the stack
  *
  * @doubly: head of the linked list
- * @cline: line number
+ * @nline: line number
  * Return: no return
  */
-void _swap(stack_t **doubly, unsigned int cline)
+void _swap(stack_t **doubly, unsigned int nline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -122,7 +122,7 @@ void _swap(stack_t **doubly, unsigned int cline)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't swap, stack too short\n", cline);
+		dprintf(2, "L%u: can't swap, stack too short\n", nline);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
