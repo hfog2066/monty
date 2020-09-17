@@ -48,9 +48,6 @@ typedef struct globals
 	char *buffer;
 } global_t;
 
-global_t vglo;
-
-
 /**
  * struct instruction_s - opcode and its function.
  * @opcode: the opcode.
