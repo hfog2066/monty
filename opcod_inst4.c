@@ -5,15 +5,15 @@
  *and second to the top.
  *
  *@doubly: linked list head.
- *@nline: line number;
+ *@cline: line number;
  *Return: no return.
  */
 
-void _rotl(stack_t **doubly, unsigned int nline)
+void _rotl(stack_t **doubly, unsigned int cline)
 {
 	stack_t *aux1 = NULL;
 	stack_t *aux2 = NULL;
-	(void)nline;
+	(void)cline;
 
 	if (*doubly == NULL)
 		return;
@@ -38,14 +38,14 @@ void _rotl(stack_t **doubly, unsigned int nline)
  *_rotr - reverse the stack.
  *
  *@doubly: linked list head.
- *@nline: line number.
+ *@cline: line number.
  *Return: no return.
  */
 
-void _rotr(stack_t **doubly, unsigned int nline)
+void _rotr(stack_t **doubly, unsigned int cline)
 {
 	stack_t *aux = NULL;
-	(void)nline;
+	(void)cline;
 
 	if (*doubly == NULL)
 		return;
