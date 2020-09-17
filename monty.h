@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -47,6 +48,8 @@ typedef struct globals
 	FILE *fd;
 	char *buffer;
 } global_t;
+
+global_t vglo;
 
 /**
  * struct instruction_s - opcode and its function.
