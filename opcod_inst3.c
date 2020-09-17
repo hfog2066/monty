@@ -114,6 +114,7 @@ void _mod(stack_t **doubly, unsigned int nline)
 
 void _pchar(stack_t **doubly, unsigned int nline)
 {
+
 	if (doubly == NULL || *doubly == NULL)
 	{
 		dprintf(2, "L%u: cant't pchar, stack empty\n", nline);
